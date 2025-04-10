@@ -7,10 +7,13 @@ m.Base.metadata.drop_all(bind=engine)
 m.Base.metadata.create_all(bind=engine)
 
 with Session(bind=engine) as session:
-    p1 = m.Product(product_name="Milk")
+    c1 = m.Category(category_name="Еда")
+    session.add(c1)
+
+    p1 = m.Product(product_name="Milk", category=c1)
     session.add(p1)
 
-    p2 = m.Product(product_name="Bread")
+    p2 = m.Product(product_name="Bread", category=c1)
     session.add(p2)
 
     plt1 = m.Planet(planet_name="Земля", planet_mass=5.9, planet_diameter=12756)

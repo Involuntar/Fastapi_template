@@ -1,5 +1,8 @@
 from pydantic import BaseModel, Field
 
+class BaseCategory(BaseModel):
+    id:int=Field(example=1)
+    category_name:str=Field(example='Еда')
 
 class BaseProduct(BaseModel):
     id:int=Field(example=1)

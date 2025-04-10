@@ -9,7 +9,7 @@ import pyd
 app=FastAPI()
 
 # Продукты
-@app.get('/products', response_model=List[pyd.BaseProduct])
+@app.get('/products', response_model=List[pyd.SchemaProduct])
 def get_all_products(db:Session=Depends(get_db)):
     products = db.query(m.Product).all()
     return products
