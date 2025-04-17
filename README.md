@@ -9,5 +9,8 @@
 Установка зависимостей
 `pip install -r requirements.txt`
 
+Запуска посева
+`python seed.py`
+
 Запуск
 `fastapi dev main.py`
